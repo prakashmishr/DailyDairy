@@ -1,0 +1,36 @@
+
+<%- include("partials1/header"); -%>
+
+
+    <h1><%=title%></h1>
+    <p><%=content%></p>
+   
+
+    <!-- <form action="" method="post">
+ <button>Delete</button>
+</form> -->
+
+<!-- 
+    <form action="/delete" method="post">
+    <div class="item">
+      <button  name="checkbox"  value="" > Delete </button>
+    </div>
+  </form> -->
+
+
+<h2 class="comment">Comments</h2>
+<form class="" action="/posts/<%=postId%>/comment" method="post">
+  <div class="form-group">
+    <label>Enter your comments</label>
+    <input class="form-control" type="text" name="comment">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button" value="<%=postId%>">Publish</button>
+</form>
+
+<% post.comments.forEach(function(comment) { %>
+  <h4><%= comment.name%></h4>
+  <h5 class="card-subtitle mb-2 text-muted">==== <%= comment.comment %>====</h5>
+
+<% }); %> 
+
+<%- include("partials1/footer"); -%>

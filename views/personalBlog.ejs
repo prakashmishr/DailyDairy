@@ -1,0 +1,21 @@
+<%- include("partials1/header2"); -%>
+
+    <h1>Personal Blog</h1>
+    <!-- <p> %= startingContent % </p> -->
+
+    <%  user.personals.forEach(function(personal){ %>
+
+        <h1><%=personal.title%></h1>
+        <p>
+        <%=personal.content.substring(0, 100) + " ..."%>
+        <a href="/personals/<%=personal._id%>">Read More</a>
+        </p>
+  
+    
+        <% }) %>
+   
+
+  
+      
+
+<%- include("partials1/footer"); -%>
